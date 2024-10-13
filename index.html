@@ -51,11 +51,7 @@
                 photo = document.getElementById('photo');
                 startbutton = document.getElementById('startbutton');
     
-                navigator.mediaDevices.getUserMedia(constraints)({
-                        video: true,
-                        audio: false,
-                        facingMode: "environment"
-                    })
+                videoStream = await navigator.mediaDevices.getUserMedia(constraints)
                     .then(function(stream) {
                         video.srcObject = stream;
                         video.play();
