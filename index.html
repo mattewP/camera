@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-
 </head>
 <body>
     <div class="contentarea">
@@ -30,7 +29,7 @@
             var canvas = null;
             var photo = null;
             var startbutton = null;
-       
+    
             function startup() {
                 video = document.getElementById('video');
                 canvas = document.getElementById('canvas');
@@ -38,10 +37,8 @@
                 startbutton = document.getElementById('startbutton');
     
                 navigator.mediaDevices.getUserMedia({
-                    ({
                         video: true,
-                        audio: false,
-                        facingMode: "environment"
+                        audio: false
                     })
                     .then(function(stream) {
                         video.srcObject = stream;
@@ -61,7 +58,6 @@
     
                         video.setAttribute('width', width);
                         video.setAttribute('height', height);
-                        video.setAttribute('facingMode', environment);
                         canvas.setAttribute('width', width);
                         canvas.setAttribute('height', height);
                         streaming = true;
